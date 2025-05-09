@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 450px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 25px 35px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  border-radius: 14px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+  padding: 10px;
+  flex: 1;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #43a047;
+}
+
+.filters {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.filters button {
+  background: #eee;
+  color: #333;
+  margin: 0 5px;
+  padding: 6px 12px;
+}
+
+.filters .active {
+  background: #4caf50;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.timestamp {
+  margin-left: auto;
+  font-size: 12px;
+  color: #888;
+}
+
+.deadline {
+  font-size: 12px;
+  color: #0077cc;
+  margin-left: 10px;
+}
+
+.delete-btn {
+  background: transparent;
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}

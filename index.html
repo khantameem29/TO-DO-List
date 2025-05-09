@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do App with Alarm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body ng-controller="TodoController">
+  <div class="container">
+    <h1>📝 My To-Do List</h1>
+
+    <div class="input-group">
+      <input type="text" ng-model="newTask" placeholder="What needs to be done?" />
+      <input type="datetime-local" ng-model="newDeadline" />
+      <button ng-click="addTask()">Add Task</button>
+    </div>
+
+    <div class="filters">
+      <button ng-click="setFilter('all')" ng-class="{active: statusFilter === 'all'}">All</button>
+      <button ng-click="setFilter('active')" ng-class="{active: statusFilter === 'active'}">Active</button>
+      <button ng-click="setFilter('completed')" ng-class="{active: statusFilter === 'completed'}">Completed</button>
+    </div>
+
+    <ul>
+      <li ng-repeat="task in filteredTasks()">
+        <input type="checkbox" ng-model="task.done" />
+        <span ng-class="{done: task.done}" ng-dblclick="editTask(task)">{{ task.name }}</span>
+        <span class="timestamp">{{ task.timestamp | date:'shortTime' }}</span>
+        <span class="deadline" ng-if="task.deadline">⏳ {{ task.deadline | date:'short' }}</span>
+        <button class="delete-btn" ng-click="deleteTask($index)">✖</button>
+      </li>
+    </ul>
+
+    <p ng-if="tasks.length === 0">No tasks yet, start adding!</p>
+  </div>
+
+  <audio id="notify-sound" src="notification.mp3" preload="auto"></audio>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
